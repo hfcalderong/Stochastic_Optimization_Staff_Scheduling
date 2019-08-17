@@ -4,6 +4,8 @@ Creates a labor schedule for a retailer that minimizes total cost while preservi
 ## Table of Content
 
 * [Background](#Background)
+* [Models](#Models)
+* [Results](#Results)
 
 ## Background
 
@@ -23,7 +25,7 @@ Brick-and-mortar retail stores employ about 15% of the American workforce. In re
 ● help managers make better staff scheduling decisions based on staffing cost and the
 impact of staffing on the store’s service level which is correlated to the store revenues in most scenarios
 
-## Model
+## Models
 
 During the first stage, the Sales Response Model forecasts the expected hourly sales based on the store traffic, average price of the product, number of sales staff, etc. Using this model, we are able to find the optimal number of staff that will maximize the expected profit in any given hour. The output from stage 1 is used as the input for the second stage where each employee is assigned to different shifts throughout the week with a mixed integer program. We further develop upon the stage 2 MIP model by adding service level and consistency constraints which will be discussed in more details in later sections.
 
@@ -45,3 +47,4 @@ gj(x, Zi) ≤ 0
 ​The set of constraints above will produce a feasible solution with probability δ and ε is the probability of not meeting the service availability target. Additionally, a lower bound on the number of scenarios required is given by [5].
 ​For a problem of our size we would need at least 86,000 scenarios. Figure 6 shows the result of the three different methods. If we use the expected store traffic you would need a team of 20 people and there is a probability of 40% of not meeting the target service availability, but if you use the individual constraints this probability drops to 6% and the team grows to 24 people. Finally, if you use the joint probability constraint, the probability of not meeting the target is 0.001%, however the team grows to 34 people and the staffing cost goes up to $13,395 (+54%). Clearly, the decision of which constraints to add have a great impact in the optimal cost and the decision should be based on market research, strategic analysis, customer insights or from what the competitors are doing. This constraints show clearly the tradeoff of a better service and the staffic cost.
 
+## Results
