@@ -6,10 +6,11 @@ Creates a labor schedule for a retailer that minimizes total cost while preservi
 * [Background](#Background)
 * [Models](#Models)
 * [Results](#Results)
+* [References](#References)
 
 ## Background
 
-Brick-and-mortar retail stores employ about 15% of the American workforce. In retail, variable schedules are the norms where schedules typically change every day and every week with three to seven days’ notice of next week’s schedule. 2​ ​Researchers have found that matching labor to incoming traffic is a key driver of retail profitability. Most retailers operate under the assumption that stabilizing employees’ schedules would hurt the stores’ financial performance. 3​ ​Numerous studies have also found that variable schedules have deleterious effects on employees’ well-beings and thus incur invisible expenses, such as, inefficiency at work, etc.
+Brick-and-mortar retail stores employ about 15% of the American workforce. In retail, variable schedules are the norm where schedules typically change every day and every week with three to seven days’ notice of next week’s schedule. Researchers have found that matching labor to incoming traffic is a key driver of retail profitability. Most retailers operate under the assumption that stabilizing employees’ schedules would hurt the stores’ financial performance. Numerous studies have also found that variable schedules have deleterious effects on employees’ well-beings and thus incur invisible expenses, such as, inefficiency at work, etc.
 3​ ​A few leading retailers have made the attempts to adopt more data-driven approaches for scheduling and been able to capture between 4 and 12 % in cost savings among other facets of store operations. S​table and consistent retail staffing scheduling that is able to meet the store traffic demand is likely to benefit both the employees and employers.
 
 ## Problem Statement
@@ -48,3 +49,11 @@ gj(x, Zi) ≤ 0
 ​For a problem of our size we would need at least 86,000 scenarios. Figure 6 shows the result of the three different methods. If we use the expected store traffic you would need a team of 20 people and there is a probability of 40% of not meeting the target service availability, but if you use the individual constraints this probability drops to 6% and the team grows to 24 people. Finally, if you use the joint probability constraint, the probability of not meeting the target is 0.001%, however the team grows to 34 people and the staffing cost goes up to $13,395 (+54%). Clearly, the decision of which constraints to add have a great impact in the optimal cost and the decision should be based on market research, strategic analysis, customer insights or from what the competitors are doing. This constraints show clearly the tradeoff of a better service and the staffic cost.
 
 ## Results
+
+## References
+[1] Lam, S., Vandenbosch, M., Pearce M. ​Retail Sales Force Scheduling Based on Store Traffic Forecasting​. Journal of retailing.
+[2] Kabak, O., Ulengin, F. et al.​ Efficient shift scheduling in the retail sector through two-stage optimization. ​European Journal of Operations Research.
+[3] Williams, J., Lambert, S. et al. ​Stable Scheduling Increases Productivity and Sales.​ The Stable Scheduling Study.
+[4] Dentcheva, D. ​ Optimization Models with Probabilistic Constraints​. Stevens Institute of Technology.
+[5] Luedtke, J. And Ahmed S. ​A Sample Approximation Approach For Optimization With Probabilistic Constraints. S​ ociety for Industrial and Applied Mathematics.
+[6] András Prékopa. ​On Probabilistic Constrained Programming. P​ rinceton Symposium on Mathematical Programming.
