@@ -3,7 +3,7 @@ Creates a labor schedule for a retailer that minimizes total cost while preservi
 
 ## Table of Content
 
-* [Background](## Background)
+* [Background](#Background)
 
 ## Background
 
