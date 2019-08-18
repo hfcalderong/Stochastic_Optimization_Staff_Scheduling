@@ -2,18 +2,10 @@
 # coding: utf-8
 
 # # Staff Scheduling in Retail
-
-# In[1]:
-
-
 from gurobipy import *
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as scp
-
-
-# In[2]:
-
 
 #PARAMETERS
 OT = 10        # Opening time of store
@@ -63,12 +55,7 @@ schedule_matrix = np.array(
 duration_shift = [7, 9, 9, 9, 11, 11, 12, 12, 12, 8, 8, 9, 11, 11, 11, 4, 7, 10, 10, 4, 9, 4, 7, 8, 4, 7, 4, 4]
 num_shifts = len(schedule_matrix)
 
-
 # ## Creating the model
-
-# In[3]:
-
-
 def solve_model(hreq, num_full, num_part): 
     model = Model("RetailScheduling")
     model.Params.timeLimit = 300.0
@@ -130,10 +117,6 @@ def solve_model(hreq, num_full, num_part):
     c = model.objVal
     return x, y, c
 
-
-# In[4]:
-
-
 def build_schedule(x, y):
     schedule = {}
     for day in days:
@@ -149,10 +132,6 @@ def build_schedule(x, y):
             schedule[(day, hour)] = num_people
     return schedule
 
-
-# In[5]:
-
-
 def service_availability(store_traffic, schedule):
     num_samples = 100000
     simulated_traffic = {hour:np.random.poisson(store_traffic[hour], num_samples)/schedule[hour] 
@@ -161,11 +140,7 @@ def service_availability(store_traffic, schedule):
     sa_week = [np.sum(sample > 10) for sample in simulated_traffic.transpose()]
     return np.ndarray.flatten(simulated_traffic), np.array(sa_week)
 
-
 # ## 1. Using the expected value
-
-# In[6]:
-
 
 #Number of workers required on day i (from 1 - Mon to 7 - Sun), at hour h (from 10 to 21).
 hreq = tupledict({
@@ -186,15 +161,7 @@ hreq = tupledict({
 num_full = 15 # maximum number of full-time staff
 num_part = 15 # maximum number of part-time staff
 
-
-# In[9]:
-
-
 store_traffic = {hour:hreq[hour]*10 for hour in hreq}
-
-
-# In[7]:
-
 
 #INDICES
 days = tuple(range(1, 8))                #Index for the day of the week; i = 1,...,7
@@ -210,22 +177,10 @@ dict_cost_full = {(employee, day, shift):duration_shift[shift - 1]*CostF
 dict_cost_part = {(employee, day, shift):duration_shift[shift - 1]*CostP
                  for employee in ifull for day in days for shift in shifts}
 
-
-# In[8]:
-
-
 x, y, c1 = solve_model(hreq, num_full, num_part)
 schedule = build_schedule(x,y)
 
-
-# In[10]:
-
-
 sa_hour1, sa_week1 = service_availability(store_traffic, schedule)
-
-
-# In[11]:
-
 
 plt.hist(sa_hour1, density = True, bins = 50, alpha = 0.75)
 plt.vlines(10, 0, 0.4)
@@ -233,42 +188,22 @@ plt.xlabel('Service availability')
 plt.ylabel('Frequency')
 plt.show()
 
-
-# In[12]:
-
-
 plt.hist(sa_week1, density = True, bins = 50)
 plt.show()
-
-
-# In[13]:
-
 
 #Fraction of hours where I don't meet my target service level
 np.sum(sa_hour1 > 10)/len(sa_hour1)
 
-
-# In[14]:
-
-
 #Fraction of weeks where I don't meet my target service level
 1 - np.sum(sa_week1 == 0)/len(sa_week1)
 
-
 # ## Using the quantile of the distribution
-
-# In[15]:
-
 
 #Number of workers required on day i (from 1 - Mon to 7 - Sun), at hour h (from 10 to 21).
 hreq = {hour:round(scp.poisson.ppf(0.95, store_traffic[hour])/10,0) for hour in hreq}
 
 num_full = 20 #Maximum number of full-time staff
 num_part = 20 #Maximum number of part-time staff
-
-
-# In[16]:
-
 
 #INDICES
 ifull = tuple(range(1,num_full + 1))     #Index for full-time staff members; k = 1, . . . ,n_F
@@ -281,22 +216,10 @@ dict_cost_full = {(employee, day, shift):duration_shift[shift - 1]*CostF
 dict_cost_part = {(employee, day, shift):duration_shift[shift - 1]*CostP
                  for employee in ifull for day in days for shift in shifts}
 
-
-# In[17]:
-
-
 x, y, c2 = solve_model(hreq, num_full, num_part)
 schedule = build_schedule(x,y)
 
-
-# In[18]:
-
-
 sa_hour2, sa_week2 = service_availability(store_traffic, schedule)
-
-
-# In[19]:
-
 
 plt.hist(sa_hour1, density = True, bins = 50, alpha = 0.75, label = 'Cost')
 plt.hist(sa_hour2, density = True, bins = 50, alpha = 0.75, label = 'Individual Constraint')
@@ -306,42 +229,22 @@ plt.ylabel('Frequency')
 plt.legend()
 plt.show()
 
-
-# In[20]:
-
-
 plt.hist(sa_week2, density = True, bins = 50)
 plt.show()
-
-
-# In[21]:
-
 
 #Fraction of hours where I don't meet my target service level
 np.sum(sa_hour2 > 10)/len(sa_hour2)
 
-
-# In[22]:
-
-
 #Fraction of weeks where I don't meet my target service level
 1 - np.sum(sa_week2 == 0)/len(sa_week2)
 
-
 # ## Using the scenario approximation
-
-# In[23]:
-
 
 #Number of workers required on day i (from 1 - Mon to 7 - Sun), at hour h (from 10 to 21).
 hreq = {hour:np.ceil(np.max(np.random.poisson(store_traffic[hour],100000)/10)) for hour in hreq}
 
 num_full = 25 #Maximum number of full-time staff
 num_part = 25 #Maximum number of part-time staff
-
-
-# In[24]:
-
 
 #INDICES
 ifull = tuple(range(1,num_full + 1))     #Index for full-time staff members; k = 1, . . . ,n_F
@@ -354,22 +257,10 @@ dict_cost_full = {(employee, day, shift):duration_shift[shift - 1]*CostF
 dict_cost_part = {(employee, day, shift):duration_shift[shift - 1]*CostP
                  for employee in ifull for day in days for shift in shifts}
 
-
-# In[25]:
-
-
 x, y, c3 = solve_model(hreq, num_full, num_part)
 schedule = build_schedule(x,y)
 
-
-# In[26]:
-
-
 sa_hour3, sa_week3 = service_availability(store_traffic, schedule)
-
-
-# In[27]:
-
 
 plt.hist(sa_hour1, density = True, bins = 50, alpha = 0.75, label = 'Cost')
 plt.hist(sa_hour2, density = True, bins = 50, alpha = 0.75, label = 'Individual Constraint')
@@ -380,32 +271,16 @@ plt.ylabel('Frequency')
 plt.legend()
 plt.show()
 
-
-# In[28]:
-
-
 plt.hist(sa_week3, density = True, bins = 50)
 plt.show()
-
-
-# In[29]:
-
 
 #Fraction of hours where I don't meet my target service level
 np.sum(sa_hour3 > 10)/len(sa_hour3)
 
-
-# In[30]:
-
-
 #Fraction of weeks where I don't meet my target service level
 1 - np.sum(sa_week3 == 0)/len(sa_week3)
 
-
 # ## Cost as function of service level
-
-# In[37]:
-
 
 num_full = 25 #Maximum number of full-time staff
 num_part = 25 #Maximum number of part-time staff
@@ -421,10 +296,6 @@ dict_cost_full = {(employee, day, shift):duration_shift[shift - 1]*CostF
 dict_cost_part = {(employee, day, shift):duration_shift[shift - 1]*CostP
                  for employee in ifull for day in days for shift in shifts}
 
-
-# In[38]:
-
-
 probs = np.insert(np.linspace(0.45, 0.95, 11), 11, [0.99, 0.995])
 cost_ind = []
 for quantile in probs:  
@@ -433,10 +304,6 @@ for quantile in probs:
     hreq = {hour:round(scp.poisson.ppf(quantile, store_traffic[hour])/10,0) for hour in hreq}
     x, y, c = solve_model(hreq, num_full, num_part)
     cost_ind.append(c)
-
-
-# In[39]:
-
 
 #Using the scenario approximation
 delta = 0.05
@@ -453,10 +320,6 @@ for quantile in probs:
     x, y, c = solve_model(hreq, num_full, num_part)
     cost_joint.append(c)
 
-
-# In[40]:
-
-
 plt.plot(1 - probs, np.array(cost_ind)/1000, label = 'Individual')
 plt.plot(1 - probs, np.array(cost_joint)/1000, label = 'Joint')
 plt.xlabel('Probability of not meeting the target')
@@ -465,4 +328,3 @@ plt.legend()
 plt.plot([0.05],cost_ind[-3]/1000,'ro')
 plt.plot([0.05],cost_joint[-3]/1000,'ro')
 plt.show()
-
