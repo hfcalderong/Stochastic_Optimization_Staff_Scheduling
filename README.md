@@ -51,9 +51,9 @@ gj(x, Zi) ≤ 0
 ## Results
 
 ## References
-1. Lam, S., Vandenbosch, M., Pearce M. ​Retail Sales Force Scheduling Based on Store Traffic Forecasting​. Journal of retailing.
-2. Kabak, O., Ulengin, F. et al.​ Efficient shift scheduling in the retail sector through two-stage optimization. ​European Journal of Operations Research.
-[3]. Williams, J., Lambert, S. et al. ​Stable Scheduling Increases Productivity and Sales.​ The Stable Scheduling Study.
-[4]. Dentcheva, D. ​ Optimization Models with Probabilistic Constraints​. Stevens Institute of Technology.
-[5]. Luedtke, J. And Ahmed S. ​A Sample Approximation Approach For Optimization With Probabilistic Constraints. S​ ociety for Industrial and Applied Mathematics.
-[6]. András Prékopa. ​On Probabilistic Constrained Programming. P​ rinceton Symposium on Mathematical Programming.
+1. Lam, S., Vandenbosch, M., Pearce M. *Retail Sales Force Scheduling Based on Store Traffic Forecasting*. Journal of retailing.
+2. Kabak, O., Ulengin, F. et al.*Efficient shift scheduling in the retail sector through two-stage optimization*. European Journal of Operations Research.
+3. Williams, J., Lambert, S. et al. *Stable Scheduling Increases Productivity and Sales*. The Stable Scheduling Study.
+4. Dentcheva, D. *Optimization Models with Probabilistic Constraints*. Stevens Institute of Technology.
+5. Luedtke, J. And Ahmed S. *A Sample Approximation Approach For Optimization With Probabilistic Constraints*. Society for Industrial and Applied Mathematics.
+6. András Prékopa. *On Probabilistic Constrained Programming*. Princeton Symposium on Mathematical Programming.
