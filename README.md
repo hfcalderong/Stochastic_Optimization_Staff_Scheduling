@@ -6,7 +6,7 @@ Contributors: Felipe Calderon, Nikki Gong, Rebecca Peng, Vivian Peng
 ## Table of Content
 
 * [Background](#Background)
-* [Problem Statement](#Problem Statement)
+* [Problem Statement](#ProblemStatement)
 * [Results](#Results)
 * [References](#References)
 
