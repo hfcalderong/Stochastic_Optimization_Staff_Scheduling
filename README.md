@@ -12,9 +12,7 @@ Contributors: Felipe Calderon, Nikki Gong, Rebecca Peng, Vivian Peng
 
 ## Background
 
-Brick-and-mortar retail stores employ about 15% of the American workforce. In retail, variable schedules are the norm where schedules typically change every day and every week with three to seven days’ notice of next week’s schedule. Researchers have found that matching labor to incoming traffic is a key driver of retail profitability. Most retailers operate under the assumption that stabilizing employees’ schedules would hurt the stores’ financial performance. Numerous studies have also found that variable schedules have deleterious effects on employees’ well-beings and thus incur invisible expenses, such as, inefficiency at work.
-
-A few leading retailers have made the attempts to adopt more data-driven approaches for scheduling and been able to capture between 4 and 12 % in cost savings among other facets of store operations. Stable and consistent retail staffing scheduling that is able to meet the store traffic demand is likely to benefit both the employees and employers.
+Brick-and-mortar retail stores employ about 15% of the American workforce. In retail, variable schedules are the norm where schedules typically change every day and every week with three to seven days’ notice of next week’s schedule. Researchers have found that matching labor to incoming traffic is a key driver of retail profitability. Retailers that have adopted more data-driven approaches for scheduling have been able to capture between 4 and 12 % in cost savings among other facets of store operations.
 
 ## Problem Statement
 
