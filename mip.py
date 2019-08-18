@@ -197,7 +197,7 @@ np.sum(sa_hour1 > 10)/len(sa_hour1)
 #Fraction of weeks where I don't meet my target service level
 1 - np.sum(sa_week1 == 0)/len(sa_week1)
 
-# ## Using the quantile of the distribution
+# ## 2. Using the quantile of the distribution
 
 #Number of workers required on day i (from 1 - Mon to 7 - Sun), at hour h (from 10 to 21).
 hreq = {hour:round(scp.poisson.ppf(0.95, store_traffic[hour])/10,0) for hour in hreq}
@@ -238,7 +238,7 @@ np.sum(sa_hour2 > 10)/len(sa_hour2)
 #Fraction of weeks where I don't meet my target service level
 1 - np.sum(sa_week2 == 0)/len(sa_week2)
 
-# ## Using the scenario approximation
+# ## 3. Using the scenario approximation
 
 #Number of workers required on day i (from 1 - Mon to 7 - Sun), at hour h (from 10 to 21).
 hreq = {hour:np.ceil(np.max(np.random.poisson(store_traffic[hour],100000)/10)) for hour in hreq}
