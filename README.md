@@ -11,7 +11,7 @@ Creates a labor schedule for a retailer that minimizes total cost while preservi
 ## Background
 
 Brick-and-mortar retail stores employ about 15% of the American workforce. In retail, variable schedules are the norm where schedules typically change every day and every week with three to seven days’ notice of next week’s schedule. Researchers have found that matching labor to incoming traffic is a key driver of retail profitability. Most retailers operate under the assumption that stabilizing employees’ schedules would hurt the stores’ financial performance. Numerous studies have also found that variable schedules have deleterious effects on employees’ well-beings and thus incur invisible expenses, such as, inefficiency at work, etc.
-3​ ​A few leading retailers have made the attempts to adopt more data-driven approaches for scheduling and been able to capture between 4 and 12 % in cost savings among other facets of store operations. S​table and consistent retail staffing scheduling that is able to meet the store traffic demand is likely to benefit both the employees and employers.
+A few leading retailers have made the attempts to adopt more data-driven approaches for scheduling and been able to capture between 4 and 12 % in cost savings among other facets of store operations. table and consistent retail staffing scheduling that is able to meet the store traffic demand is likely to benefit both the employees and employers.
 
 ## Problem Statement
 
@@ -51,7 +51,7 @@ gj(x, Zi) ≤ 0
 ## Results
 
 ## References
-[1] Lam, S., Vandenbosch, M., Pearce M. ​Retail Sales Force Scheduling Based on Store Traffic Forecasting​. Journal of retailing.
+[1] Lam, S., Vandenbosch, M., Pearce M. ​Retail Sales Force Scheduling Based on Store Traffic Forecasting​. Journal of retailing.\n
 [2] Kabak, O., Ulengin, F. et al.​ Efficient shift scheduling in the retail sector through two-stage optimization. ​European Journal of Operations Research.
 [3] Williams, J., Lambert, S. et al. ​Stable Scheduling Increases Productivity and Sales.​ The Stable Scheduling Study.
 [4] Dentcheva, D. ​ Optimization Models with Probabilistic Constraints​. Stevens Institute of Technology.
