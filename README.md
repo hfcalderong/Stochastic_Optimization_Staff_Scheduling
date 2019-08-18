@@ -1,5 +1,5 @@
 # Stochastic Optimization - Staff Scheduling
-Creates a labor schedule for a retailer that minimizes total cost while preserving a given service level target. The schedule is built using Python v. 3.7.1 + Gurobi v. 8.1.1 to solve the Mixed Integer Programming problem with probability constraints.
+Creates a labor schedule for a retailer that minimizes total cost while preserving a given service level target. The schedule is built using Python v. 3.7.1 + Gurobi v. 8.1.1 to solve a Mixed Integer Programming problem with probability constraints.
 
 Contributors: Felipe Calderon, Nikki Gong, Rebecca Peng, Vivian Peng
 
@@ -16,16 +16,12 @@ Brick-and-mortar retail stores employ about 15% of the American workforce. In re
 
 ## Problem Statement
 
-​Current solutions and softwares used by majority of the retailers produce only generic schedules that fail to account for store-specific factors and workload fluctuations, and they disregard the impacts of scheduling on the service level and staffs’ overall well-beings. These solutions have led to undesired results including:
-● Overstaffing leads to high labor cost
-● Understaffing that would hurt the stores’ profitability
-● Inconsistency schedules lower the staffs’ satisfactions
-​In this project, we intend to help solve the above three pressing issues in retail workforce scheduling by developing effective retail workforce scheduling models that will:
-● ensure the number of staffs will match the store customer traffic
-● minimize the total staffing cost
-● improve the employees’ satisfactions and well-beings
-● help managers make better staff scheduling decisions based on staffing cost and the
-impact of staffing on the store’s service level which is correlated to the store revenues in most scenarios
+Current software solutions used by the majority of retailers produce only generic schedules that fail to account for store-specific factors and workload fluctuations, and they disregard the impacts of scheduling on the service level and staffs’ overall well-beings.
+
+The models explored in this project help improving the profitability of the retailers by minimizing the labor cost without affecting the level of service they provide to customers. The decision variables are listed below
+
+*Decision Variables*
+
 
 ## Models
 
