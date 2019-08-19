@@ -28,7 +28,7 @@ Probability constraints arise naturally in many different applications and there
 
 *A complete report of this project can be found in the PDF file that is attached to this project.*
 
-![Total cost as function of probability threshold](figures/cost_vs_probability.png)
+![Total cost as function of probability threshold](figures/cost-probability.png)
 
 We observe that when the probability of meeting the target service is very low (around 0.5) the cost is basically the minimum cost without any probability constraint. As we increase the service level the cost goes up and it can be as high as $11,000 and the team grows from 20 people to 27 people. For our simulations we used p = 0.95 , and the final result is denoted with a red dot. The optimal cost that we obtain is $10,290 which is about 20% larger that the minimum cost obtained using the expected value.
 
