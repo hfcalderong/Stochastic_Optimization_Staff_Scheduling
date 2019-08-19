@@ -14,7 +14,7 @@ Brick-and-mortar retail stores employ about 15% of the American workforce. In re
 
 ## Problem Statement
 
-One of the main disadvantages of the original model is that it only takes into account the operational impact of the staffing policy. With an increasing competition and the pressure to create unique experiences in brick-and-mortar stores, retailers depend heavily on the service level they provide to their customers to thrive and survive financially. One indicator they use is the service availability, defined as the number of customers that each staff member can assist. For this retailer, and only as an illustration, we have defined a target of 10. If we use the expected store traffic then we can easily calculate the hourly requirement for staff
+One of the main disadvantages of the current model is that it only takes into account the operational impact of the staffing policy. With an increasing competition and the pressure to create unique experiences in brick-and-mortar stores, retailers depend heavily on the service level they provide to their customers to thrive and survive financially. One indicator they use is the service availability, defined as the number of customers that each staff member can assist. For this retailer, and only as an illustration, we have defined a target of 10. If we use the expected store traffic then we can easily calculate the hourly requirement for staff
 
 E(Nt)/min staff = 10 → min staff = E(Nt)/10
 
