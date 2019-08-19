@@ -1,8 +1,6 @@
 # Stochastic Optimization - Staff Scheduling
 Creates a labor schedule for a retailer that minimizes total cost while preserving a given service level target. The schedule is built using Python v. 3.7.1 + Gurobi v. 8.1.1 to solve a Mixed Integer Programming problem with probability constraints.
 
-Contributors: Felipe Calderon, Nikki Gong, Rebecca Peng, Vivian Peng
-
 ## Table of Content
 
 * [Background](#Background)
