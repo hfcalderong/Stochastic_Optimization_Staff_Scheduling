@@ -14,13 +14,9 @@ Brick-and-mortar retail stores employ about 15% of the American workforce. In re
 
 ## Problem Statement
 
-One of the main disadvantages of the current model is that it only takes into account the operational impact of the staffing policy. With an increasing competition and the pressure to create unique experiences in brick-and-mortar stores, retailers depend heavily on the service level they provide to their customers to thrive and survive financially. One indicator they use is the service availability, defined as the number of customers that each staff member can assist. For this retailer, and only as an illustration, we have defined a target of 10. If we use the expected store traffic then we can easily calculate the hourly requirement for staff
+One of the main disadvantages of the current model is that it only takes into account the operational impact of the staffing policy. With an increasing competition and the pressure to create unique experiences in brick-and-mortar stores, retailers depend heavily on the service level they provide to their customers to thrive and survive financially. One indicator they use is the service availability, defined as the number of customers that each staff member can assist. 
 
-E(Nt)/min staff = 10 → min staff = E(Nt)/10
-
-Basically, this is done in the original model, where we obtain an optimal cost of $8,655. This approximation might be reasonable in scenarios where there is not high variability, however if store traffic fluctuates over a long range of values then this approximation is no longer justifiable. We shall then include our service level as probability constraints.
-
-Probability constraints arise naturally in many different applications and there has been an increasing number of research papers that explain how to solve these problems. We have divided the planning horizon (1 week) in 1-hour increments and within each interval we assume the arrival process follows a homogeneous poisson process. 
+Using the expected value might be reasonable in scenarios where there is not high variability, however if store traffic fluctuates over a long range of values then this approximation is no longer justifiable. We shall then include our service level as probability constraints. We have divided the planning horizon (1 week) in 1-hour increments and within each interval we assume the arrival process follows a homogeneous poisson process. 
 
 ## Results
 
@@ -28,7 +24,7 @@ Probability constraints arise naturally in many different applications and there
 
 ![Total cost as function of probability threshold](figures/cost-probability.png)
 
-We observe that when the probability of meeting the target service is very low (around 0.5) the cost is basically the minimum cost without any probability constraint. As we increase the service level the cost goes up and it can be as high as $11,000 and the team grows from 20 people to 27 people. For our simulations we used p = 0.95 , and the final result is denoted with a red dot. The optimal cost that we obtain is $10,290 which is about 20% larger that the minimum cost obtained using the expected value.
+In figure 5 we observe that when the probability of meeting the target service is very low (around 0.5) the cost is basically the minimum cost without any probability constraint, $8,655. This is the same cost if we use the expected value. As we increase the service level the cost goes up and it can be as high as $11,000 and the team grows from 20 people to 27 people. For our simulations we used p = 0.95 , and the final result is denoted with a red dot. The optimal cost that we obtain is $10,290 which is about 20% larger that the minimum cost obtained using the expected value.
 
 ![Service availability](figures/service_availability.png)
 
